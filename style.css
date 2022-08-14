@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    
+}
+
+
+
+.container {
+    max-width: 1440px;
+    display: grid;
+    margin-inline: auto ;
+    
+}
+
+@media(min-width: 50em){
+    .container {
+        grid-template-columns: 1fr 2fr;
+        
+    }
+}
+
+.card-container {
+    background-image: url('./images/bg-main-mobile.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "card-back"
+                            "card-front";
+    padding: 3% 3%;
+    /* justify-content: center; */
+   
+    
+}
+
+.card {
+   
+    width: clamp(300px, 20vw, 90%);
+    height: 190px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    color: hsl(0, 0%, 100%);
+    justify-self: center;
+}
+
+.card p {
+    font-size: 16px;
+}
+
+
+.card-front {
+    background-image: url('./images/bg-card-front.png');
+    grid-area: card-front;
+    display: grid;
+    align-items: center;
+    padding: 4% 8.7%;
+    margin-top: -83px;
+    margin-bottom: -40px;
+    margin-inline-end: clamp(15%, 7vw, 30%);
+    z-index: 1;
+    
+}
+
+.card-dot-container {
+    
+    display: flex;
+    align-items: center;
+    
+}
+
+.dot {
+    border-radius: 100vw;
+    display: inline-block;
+}
+
+.big-dot {
+    
+    width: 30px;
+    height: 30px;
+    background-color: hsl(0, 0%, 100%);
+}
+
+.small-dot {
+    margin-left: 3%;
+    width: 15px;
+    height: 15px;
+    border: 1px solid hsl(0, 0%, 100%);
+}
+
+.card-back {
+    display: grid;
+    align-items: center;
+    justify-content: right;
+    background-image: url('./images/bg-card-back.png');
+    grid-area: card-back;
+    padding: 0 10%;
+    margin-inline-start: clamp(15%, 7vw, 30%);;
+}
+
+.card-number-container {
+    text-align: center;
+    
+    
+}
+
+.card-name-container .number {
+    letter-spacing: 3px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-name-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+@media(min-width: 50em){
+    .card-container {
+        grid-template-areas: 
+                "card-front"
+                "card-back";
+    }
+
+        .card-front {
+           
+            margin: 20% 0 0 50%;
+            
+        }
+
+        .card-back {
+            margin: -20px 0 0 90%;
+        }
+}
+
+.form-container {
+    padding: 15% 4% 10% 4%;
+    
+}
+
+.form-sub-container {
+    width: 100%;
+}
+
+.form-sub-container div {
+    position: relative;
+}
+
+@media(min-width: 50em){
+ .form-container {
+    display: grid;
+    align-items: center;
+ }
+.form-sub-container {
+        width: 50%;
+        margin-inline-start: auto;
+        margin-inline-end: 20%;
+        
+    
+    }
+}
+
+.form-container p {
+    text-transform: uppercase;
+    color: hsl(278, 68%, 11%);
+
+}
+
+input {
+    height: 45px;
+    width: 100%;
+    border-radius: 7px;
+    border: 1px solid hsl(270, 3%, 87%);
+    margin: 10px 0 25px 0;
+    padding: 3%;
+    position: relative;
+}
+
+input::placeholder {
+    color: hsl(270, 3%, 87%);
+    
+   
+}
+
+input:focus {
+    outline-color: hsl(278, 94%, 30%);
+}
+
+.error-input::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin-top: 80px;
+    color: hsl(0, 100%, 66%);
+    
+}
+
+
+.error-year-input::after {
+    margin-left: 110px;
+}
+
+.error-cvc-input::after {
+    margin-left: 215px;
+}
+
+
+.year-input,
+.month-input {
+    width: 20%;
+    margin-inline-end: 3.5%;
+}
+
+.cvc-input {
+    width: 50%;
+}
+
+.btn {
+    cursor: pointer;
+    height: 50px;
+    width: 100%;
+    border: none;
+    background-color: hsl(278, 68%, 11%);
+    color: hsl(0, 0%, 100%);
+    border-radius: 10px;
+    font-size: 18px;
+
+}
