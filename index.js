@@ -11,7 +11,23 @@ const cvcInputEl = document.querySelector(".cvc-input");
 
 btn.addEventListener("click", (e) => {
   e.preventDefault();
-  if (numberInputEl.nodeValue !== Number)
+  if (numberInputEl.nodeValue !== Number) {
     numberInputEl.setAttribute("data-error", "true");
-  numberInputEl.closest("span").setAttribute("data-number", "true");
+    numberInputEl.closest("span").setAttribute("data-number", "true");
+  }
+
+  if (cvcInputEl.nodeValue === null) {
+    cvcInputEl.setAttribute("data-error", "true");
+    cvcInputEl.closest("span").setAttribute("data-cvc", "true");
+  }
+
+  if (yearInputEl.nodeValue === null) {
+    yearInputEl.setAttribute("data-error", "true");
+    yearInputEl.closest("span").setAttribute("data-yy", "true");
+  }
+
+  if (monthInputEl.nodeValue === null) {
+    monthInputEl.setAttribute("data-error", "true");
+    monthInputEl.closest("span").setAttribute("data-mm", "true");
+  }
 });
