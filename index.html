@@ -21,37 +21,37 @@
         <p class="number">0000 &nbsp 0000 &nbsp 0000 &nbsp 0000</p>
         </div>
         <div class="card-name-container">
-          <p>Jane Appleseed</p>
-          <p>00/00</p>
+          <p class="name">Jane Appleseed</p>
+          <p class="date">00/00</p>
         </div>
       </div>
       <div class="card card-back">
-        <p>000</p>
+        <p class="cvc">000</p>
       </div>
     </div>
     <div class="form-container">
       <div class="form-sub-container">
       <div>
         <p>Cardholder Name</p>
-        <span class="error-input">
-        <input type="text" placeholder="e.g. Jane Appleseed">
+        <span data-details="false" class="error-input">
+        <input class="name-input" type="text" placeholder="e.g. Jane Appleseed">
         </span>
       </div>
       <div>
         <p>Card Number</p>
-        <span class="error-input">
-        <input type="number" placeholder="e.g. 1234 5678 9123 0000">
+        <span data-number="false" class="error-input">
+        <input class="number-input" placeholder="e.g. 1234 5678 9123 0000">
         </span>
       </div>
       <div>
         <p>Exp. Date (MM/YY) CVC</p>
-        <span class="error-input">
+        <span data-mm="false" class="error-input">
         <input class="month-input error-month-input" type="text" placeholder="MM">
         </span>
-        <span class="error-input error-year-input">
+        <span data-yy="false" class="error-input error-year-input">
         <input class="year-input" type="text" placeholder="YY">
         </span>
-        <span class="error-input error-cvc-input">
+        <span data-cvc="false" class="error-input error-cvc-input">
         <input class="cvc-input" type="text" placeholder="e.g. 123">
         </span>
       </div>

@@ -204,13 +204,29 @@ input:focus {
     outline-color: hsl(278, 94%, 30%);
 }
 
-.error-input::after {
-    content: '';
+input[data-error="true"]{
+    outline-color: hsl(0, 100%, 66%);
+}
+
+span[data-mm="true"]::after,
+span[data-yy="true"]::after,
+span[data-cvc="true"]::after {
+    content: 'Cannot be blank';
     position: absolute;
     inset: 0;
     margin-top: 80px;
     color: hsl(0, 100%, 66%);
-    
+    font-size: 12px;
+}
+
+
+span[data-number="true"]::after {
+    content: 'Wrong format, numbers only';
+    position: absolute;
+    inset: 0;
+    margin-top: 80px;
+    color: hsl(0, 100%, 66%);
+    font-size: 12px;
 }
 
 
