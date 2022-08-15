@@ -157,6 +157,7 @@ body {
 
 .form-sub-container {
     width: 100%;
+    position: relative;
 }
 
 .form-sub-container div {
@@ -247,6 +248,14 @@ span[data-number="true"]::after {
 
 .cvc-input {
     width: 50%;
+}
+
+.complete-container {
+    position: absolute;
+    inset:0;
+    z-index: 9999;
+    border: 1px solid lime;
+    background-color: aqua;
 }
 
 .btn {

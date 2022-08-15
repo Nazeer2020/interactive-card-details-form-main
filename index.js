@@ -9,25 +9,41 @@ const monthInputEl = document.querySelector(".month-input");
 const yearInputEl = document.querySelector(".year-input");
 const cvcInputEl = document.querySelector(".cvc-input");
 
-btn.addEventListener("click", (e) => {
-  e.preventDefault();
-  if (numberInputEl.nodeValue !== Number) {
+const formValidation = () => {
+  if (!Number(numberInputEl.value)) {
     numberInputEl.setAttribute("data-error", "true");
     numberInputEl.closest("span").setAttribute("data-number", "true");
+  } else {
+    numberInputEl.setAttribute("data-error", "false");
+    numberInputEl.closest("span").setAttribute("data-number", "false");
   }
 
-  if (cvcInputEl.nodeValue === null) {
+  if (cvcInputEl.value === "") {
     cvcInputEl.setAttribute("data-error", "true");
     cvcInputEl.closest("span").setAttribute("data-cvc", "true");
+  } else {
+    cvcInputEl.setAttribute("data-error", "false");
+    cvcInputEl.closest("span").setAttribute("data-cvc", "false");
   }
 
-  if (yearInputEl.nodeValue === null) {
+  if (yearInputEl.value === "") {
     yearInputEl.setAttribute("data-error", "true");
     yearInputEl.closest("span").setAttribute("data-yy", "true");
+  } else {
+    yearInputEl.setAttribute("data-error", "false");
+    yearInputEl.closest("span").setAttribute("data-yy", "false");
   }
 
-  if (monthInputEl.nodeValue === null) {
+  if (monthInputEl.value === "") {
     monthInputEl.setAttribute("data-error", "true");
     monthInputEl.closest("span").setAttribute("data-mm", "true");
+  } else {
+    monthInputEl.setAttribute("data-error", "false");
+    monthInputEl.closest("span").setAttribute("data-mm", "false");
   }
+};
+
+btn.addEventListener("click", (e) => {
+  e.preventDefault();
+  formValidation();
 });
