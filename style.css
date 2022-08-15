@@ -121,7 +121,7 @@ body {
 }
 
 .card-name-container .number {
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     display: flex;
     justify-content: space-between;
 }
@@ -195,7 +195,8 @@ input {
 
 input::placeholder {
     color: hsl(270, 3%, 87%);
-    
+    font-size: 18px;
+    font-weight: 500;
    
 }
 
