@@ -143,12 +143,12 @@ body {
 
     .card-front {
 
-        margin: 20% 0 0 50%;
+        margin: 100px 0 50px 50%;
 
     }
 
     .card-back {
-        margin: -20px 0 0 90%;
+        margin: -20px 0 100px 90%;
     }
 }
 
@@ -212,6 +212,8 @@ input[data-error="true"] {
     outline-color: hsl(0, 100%, 66%);
 }
 
+
+span[data-details="true"]::after,
 span[data-mm="true"]::after,
 span[data-yy="true"]::after,
 span[data-cvc="true"]::after {
@@ -255,7 +257,7 @@ span[data-number="true"]::after {
 
 .complete-form-container {
     position: absolute;
-    inset: 30% 0 0 0;
+    inset: 80% 0 0 0;
     text-align: center;
     z-index: 9999;
     display: none;
@@ -270,14 +272,34 @@ span[data-number="true"]::after {
     margin-inline: auto;
 }
 
+.complete-form-container p {
+    color: hsl(279, 6%, 55%);
+    font-size: 14px;
+    text-transform: none;
+    margin: 20px 0 40px 0;
+}
+
+.complete-form-container h1 {
+    margin-top: 20px;
+}
+
 @media(min-width: 50em) {
     .complete-form-container {
         width: 50%;
         margin-inline-start: auto;
         margin-inline-end: 20%;
-
+        inset: 20% 0 20% 0;
 
     }
+
+        .complete-form-container p {
+            
+            margin:0;
+        }
+
+                .complete-form-container h1 {
+                    margin-top: 0;
+                }
 }
 
 .btn {

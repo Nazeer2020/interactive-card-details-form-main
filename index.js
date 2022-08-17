@@ -9,10 +9,11 @@ const monthInputEl = document.querySelector(".month-input");
 const yearInputEl = document.querySelector(".year-input");
 const cvcInputEl = document.querySelector(".cvc-input");
 const btnContinue = document.querySelector(".btn-continue");
+const dateElement = document.querySelector(".date");
 
 const formValidation = () => {
   let num = 0;
-  if (!Number(numberInputEl.value)) {
+  if (!Number(numberInputEl.value) || numberInputEl.value.length < 12) {
     numberInputEl.setAttribute("data-error", "true");
     numberInputEl.closest("span").setAttribute("data-number", "true");
   } else {
@@ -48,16 +49,33 @@ const formValidation = () => {
     num++;
   }
 
+  if (nameInputEl.value === "") {
+    nameInputEl.setAttribute("data-error", "true");
+    nameInputEl.closest("span").setAttribute("data-details", "true");
+  } else {
+    nameInputEl.setAttribute("data-error", "false");
+    nameInputEl.closest("span").setAttribute("data-details", "false");
+    num++;
+  }
+
   return num;
+};
+
+const fillingCardDetails = () => {
+  cardNumber.innerText = `${numberInputEl.value.match(/.{1,4}/g).join("  ")}`;
+  cardCVC.innerText = `${cvcInputEl.value}`;
+  cardName.innerText = `${nameInputEl.value}`;
+  dateElement.innerText = `${monthInputEl.value}/${yearInputEl.value}`;
 };
 
 btn.addEventListener("click", (e) => {
   e.preventDefault();
   const result = formValidation();
-  if (result === 4) {
+  if (result === 5) {
     console.log("hey");
     document.querySelector(".complete-form-container").classList.add("show");
     document.querySelector(".form-sub-container").classList.add("hide");
+    fillingCardDetails();
   }
 });
 
